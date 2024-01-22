@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+
+    <!-- CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Start Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- Start Content -->
+    <section class="container" id="task">
+      <div class="row mt-5 gap-3">
+        <div
+          class="col border p-3"
+          id="todo"
+          ondragover="allowDrop(event)"
+          ondrop="drop(event)"
+        >
+          <h3>Todo</h3>
+          <article
+            class="border p-3 mt-2"
+            ondragstart="drag(event)"
+            draggable="true"
+            id="drag-1"
+          >
+            <h4>Judul</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+              voluptatum.
+            </p>
+
+            <button
+              class="bg-danger rounded-5 px-3 py-1 border-0 text-white me-1"
+            >
+              Delete
+            </button>
+            <button
+              class="bg-info rounded-5 px-3 py-1 border-0 text-white me-1"
+            >
+              Edit
+            </button>
+          </article>
+        </div>
+        <div
+          class="col border p-3"
+          ondragover="allowDrop(event)"
+          ondrop="drop(event)"
+        >
+          <h3>Done</h3>
+        </div>
+      </div>
+    </section>
+
+    <div class="d-flex flex-row justify-content-center mt-5">
+      <button class="btn btn-primary text-white" id="add-btn">
+        Tambahkan Task
+      </button>
+    </div>
+
+    <!-- End Content -->
+
+    <!-- Start Footer -->
+    <footer class="bg-primary py-2 fixed-bottom">
+      <h3 class="text-center m-0 text-white">12:45:10</h3>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/script-index.js"></script>
+  </body>
+</html>
