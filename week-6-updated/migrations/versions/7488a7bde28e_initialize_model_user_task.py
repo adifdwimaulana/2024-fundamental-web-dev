@@ -1,8 +1,8 @@
-"""Initialize schema
+"""Initialize model user & task
 
-Revision ID: f8b5758d18ea
+Revision ID: 7488a7bde28e
 Revises: 
-Create Date: 2024-02-19 18:48:50.413040
+Create Date: 2024-02-19 19:27:05.351356
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'f8b5758d18ea'
+revision = '7488a7bde28e'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -23,6 +23,7 @@ def upgrade():
     sa.Column('name', sa.String(length=64), nullable=True),
     sa.Column('email', sa.String(length=128), nullable=True),
     sa.Column('password', sa.String(length=1024), nullable=True),
+    sa.Column('created_at', sa.DateTime(), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('tasks',

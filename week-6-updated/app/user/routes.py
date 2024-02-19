@@ -46,11 +46,7 @@ def create_user():
     if not input_name or not input_email or not input_password:
         return jsonify({"message": "Data is incomplete"}), 422
     
-
-    newUser = Users(
-        name=input_name, 
-        email=input_email, 
-        password=input_password)
+    newUser = Users(name=input_name, email=input_email, password=input_password)
     
     db.session.add(newUser)
     db.session.commit()
@@ -88,15 +84,12 @@ def edit_user(id):
 
     db.session.commit()
 
-
     response = jsonify(
         success = True,
         message = "Data berhasil diubah!"
     )
 
     return response, 200
-
-#     return response, 200
 
 # route DELETE users/id
 @userBp.route("/<int:id>", methods=['DELETE'], strict_slashes = False)
@@ -112,7 +105,6 @@ def delete_user(id):
     else:
         db.session.delete(user)
         db.session.commit()
-
 
     response = jsonify(
         success = True,
